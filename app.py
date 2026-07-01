@@ -30,9 +30,10 @@ def predict():
     data = [float(x) for x in request.form.values()]
     final_input = np.array(data).reshape(1, -1)
     print(final_input)
-    output = regmodel.predict(final_input)[0]
-    # Round the output for cleaner display
-    return render_template("home.html", prediction_text=f"The Performance Index prediction is {output:.2f}")
+    output = regmodel.predict(final_input)
+    # Use .item() to extract scalar from NumPy array
+    return render_template("home.html", prediction_text=f"The Performance Index prediction is {output.item():.2f}")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
