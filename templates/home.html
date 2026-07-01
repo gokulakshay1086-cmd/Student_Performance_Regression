@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Student Performance Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body>
+    <h2>Enter Student Details</h2>
+    <form action="/predict" method="post">
+        <label>Hours Studied:</label><input type="text" name="Hours Studied"><br>
+        <label>Previous Scores:</label><input type="text" name="Previous Scores"><br>
+        <label>Sleep Hours:</label><input type="text" name="Sleep Hours"><br>
+        <label>Sample Question Papers Practiced:</label><input type="text" name="Sample Question Papers Practiced"><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    <h3>{{ prediction_text }}</h3>
+</body>
+</html>
